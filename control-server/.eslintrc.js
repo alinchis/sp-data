@@ -3,6 +3,6 @@ module.exports = {
     "rules": {
         "no-restricted-syntax": "off",
         "no-multi-str": "off",
-        "indent": ["error", 4]
+        "indent": ["error", 2]
     }
 };

@@ -1,11 +1,11 @@
 // routes/db.js
 
 
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
 
-var db = require('../dbinit/index');
+const db = require('../dbinit/index');
 
 // middleware that is specific to this router
 router.use(function timeLog (req, res, next) {
@@ -13,7 +13,7 @@ router.use(function timeLog (req, res, next) {
   next();
 });
 // define the home page route
-router.get('/', function (req, res) {
+router.get('/', (req, res) => {
   res.send('DataBase home page');
 });
 // define the about route
