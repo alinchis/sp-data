@@ -1,2 +1,2 @@
-# patj-manager
-A modular tool for managing and delivering PATJ data.
+# Spatial Planning Data
+Public Spatial Planning Data Base.
