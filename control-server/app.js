@@ -1,41 +1,32 @@
-import express from 'express';
-import logger from 'morgan';
-import bodyParser from 'body-parser';
-import path from 'path';
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 
-// import routes
-const indexr = require('./server/routes/index');
-const tempor = require('./server/routes/tempo');
-const dbr = require('./server/routes/db');
-
-// server setup
-const hostname = 'control-server';
-const port = 3030;
 const app = express();
 
-// log requests to the console
+const users = require('./api/users');
+
 app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
 
-// Parse incoming requests data
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use('/api/v1/users', users);
 
-// open static folder to the network to deliver files (pdf)
-app.use('/static', express.static(path.join(__dirname, 'static')));
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  next(createError(404));
+});
 
-// load routes from /routes folder
-app.use('/api', indexr);
-app.use('/tempo', tempor);
-app.use('/db', dbr);
+// error handler
+app.use(function(err, req, res, next) {
+  res.status(err.status || 500);
+  res.json({
+    message: err.message,
+    error: req.app.get('env') === 'development' ? err : {},
+  });
+});
 
-
-app.get('*', (req, res) => res.status(200).send({
-  message: 'Welcome to the default route',
-}));
-
-// server.listen(port, hostname, () => {
-//   console.log(`Server running at http://${hostname}:${port}/`);
-// });
-
-// start server
-app.listen(3030, () => console.log('Control-Server App listening on port: ', port));
+module.exports = app;

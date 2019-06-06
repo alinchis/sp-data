@@ -8,21 +8,9 @@ MAINTAINER Alin CHIS <alin.d.chis@gmail.com>
 
 # add npm packages
 RUN npm install --global --unsafe --silent \
-#   body-parser \
-#   cookie-parser \
-#   debug \
-#   express \
-#   morgan \
-#   pug \
-#   serve-favicon \
   pg \
   pg-hstore \
-#   babel-cli \
-#   node-latex \
-#   nodemon \
-#   fs \
-  sequelize \
-  sequelize-cli
+  knex
 
 # more stuff...
 
