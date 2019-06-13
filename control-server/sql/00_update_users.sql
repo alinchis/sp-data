@@ -1,0 +1,15 @@
+-- create client user
+DROP USER IF EXISTS query_user;
+CREATE ROLE query_user
+	NOSUPERUSER
+	NOCREATEDB
+	NOCREATEROLE 
+	NOINHERIT
+	LOGIN
+	NOREPLICATION;	
+
+-- update apiuser user role
+ALTER USER api_user WITH
+	NOSUPERUSER
+  CREATEDB
+  NOCREATEROLE;

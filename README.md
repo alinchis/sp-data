@@ -1,2 +1,2 @@
 # Spatial Planning Data
-Public Spatial Planning Data Base.
+A collection of public data, obtained from public sources, cleaned and enhanced.

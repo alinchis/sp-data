@@ -1,0 +1,8 @@
+
+-- create new schemas
+CREATE SCHEMA IF NOT EXISTS aa_metadata AUTHORIZATION api_user;
+CREATE SCHEMA IF NOT EXISTS bb_nomenclature AUTHORIZATION api_user;
+CREATE SCHEMA IF NOT EXISTS cc_geo_data AUTHORIZATION api_user;
+CREATE SCHEMA IF NOT EXISTS dd_primary_data AUTHORIZATION api_user;
+CREATE SCHEMA IF NOT EXISTS ee_secondary_data AUTHORIZATION api_user;
+CREATE SCHEMA IF NOT EXISTS ff_statistical_data AUTHORIZATION api_user;

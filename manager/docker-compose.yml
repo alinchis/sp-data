@@ -15,18 +15,6 @@ services:
     ports:
       - "3333:3030"
 
-  latex-server:
-    build: "../docker-containers/latex-server"
-    image: alinchis/latex-server
-    volumes:
-      - "../latex-server:/root/patj-manager/latex-server"
-    working_dir: /root/patj-manager/latex-server
-    command: bash -c "npm install && npm start"
-    depends_on:
-      - "control-server"
-    ports:
-      - "4444:4040"
-
   pgsql-server:
     env_file:
       - .env
