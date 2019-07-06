@@ -56,7 +56,8 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       }
-    }, {
+    },
+    {
       schema: 'bb_nomenclature',
       comment: 'The complete ISO 639-3 code set.'
     });

@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const ISO_639_Macrolanguages = sequelize.define('ISO_639-3_Macrolanguages', {
+  const ISO_639_Macrolanguage = sequelize.define('ISO_639-3_Macrolanguage', {
     M_Id: {
       allowNull: false,
       type: DataTypes.CHAR(3),
@@ -20,8 +20,8 @@ module.exports = (sequelize, DataTypes) => {
     schema: 'bb_nomenclature',
     comment: 'The complete set of mappings from macrolanguages to the individual languages.'
   });
-  ISO_639_Macrolanguages.associate = function(models) {
+  ISO_639_Macrolanguage.associate = function(models) {
     // associations can be defined here
   };
-  return ISO_639_Macrolanguages;
+  return ISO_639_Macrolanguage;
 };

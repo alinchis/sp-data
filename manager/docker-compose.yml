@@ -6,9 +6,9 @@ services:
     build: "../docker-containers/control-server"
     image: alinchis/control-server
     volumes:
-      - "../control-server:/root/patj-manager/control-server"
-      - "../docker-data/control:/root/patj-manager/control-data"
-    working_dir: /root/patj-manager/control-server
+      - "../control-server:/root/sp-data/control-server"
+      - "../docker-data/control:/root/sp-data/control-data"
+    working_dir: /root/sp-data/control-server
     command: bash -c "npm install && npm run dev"
     depends_on:
       - "pgsql-server"
